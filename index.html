@@ -34,7 +34,7 @@
 </head>
 <body>
 
-<div class="container-fluid"> 
+<div class="container-fluid">
     <div class = "text-center mt-5">
     <h1>Customer Enrollment</h1> 
     </div>
@@ -75,38 +75,51 @@
 
 
     <button type = "button" onclick="add(first_name.value, last_name.value, user_id.value)" >Submit</button>
-    <button type = "button" onclick="remove(user_id.value)" >Delete</button>
+    <button type = "button" onclick="remove(first_name.value, last_name.value, user_id.value)" >Delete</button>
     <button type = "button" onclick="GetDetail(user_id.value)">Search</button>
     <button type = "button" onclick="updating(first_name.value, last_name.value, user_id.value)" >Update</button>
     <button type = "button" onclick="clearing()">Clear</button>
    
-
+</div>
     <div class="message">
         <div class="submit_class" id = "submit_class">
-            <div class="alert alert-success "  >
-                <strong>Success!</strong> Information was added.
+            <div class="alert alert-success" id = "submit_msg" >
+                <strong>Success! </strong> Record was added.
             </div>
         </div>
 
         <div class="update_class" id = "update_class">
-            <div class="alert alert-info" >
-                <strong>Info!</strong> Informations were updated.
+            <div class="alert alert-info" id = "update_msg" >
+                <strong>Notification! </strong> Record was updated.
             </div>
         </div>
 
         <div class="search_class" id = "search_class">   
-            <div class="alert alert-warning" >
-                <strong>Warning!</strong> No data.
+            <div class="alert alert-warning"  id = "search_msg">
+                
             </div>
         </div>
 
         <div class="delete_class" id = "delete_class"> 
-            <div class="alert alert-danger" >
-                <strong>Danger!</strong> Deleted data.
+            <div class="alert alert-danger"  id = "delete_msg" >
+                <strong>Danger! </strong> Record was deleted.
             </div>
         </div>
         
     </div>
+    <div class = "card_margin">
+    <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+          <h5 class="card-title">Simple Enrollment form</h5>
+          <p class="card-text">Tech stacks that was used are PHP, HTML, CSS, JS, SQL and Web API.</p>
+          <a href="#" class="btn btn-primary">Go to my website</a>
+        </div>
+      </div>
+    </div>
+
+
+    
 </div>
 
 
