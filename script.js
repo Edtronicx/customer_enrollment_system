@@ -1,4 +1,5 @@
 
+
 function GetDetail(str) {     
     if (str.length == 0) { 
         document.getElementById("first_name").value = ""; 
@@ -29,12 +30,11 @@ function GetDetail(str) {
                             ("last_name").value = myObj[1];
                         show_msg("remove_all");   
                    }else {  //If recieved empty data
-                        alert("No Data");
                         document.getElementById 
                             ("first_name").value = ""; 
                         document.getElementById
                             ("last_name").value = "";
-                        show_msg("search_sw");
+                        show_msg("search_sw", "No record");
                     }  
                 } 
             }; 
@@ -65,9 +65,7 @@ function add ( strfname, strlname, strcode){
                       
         // Typical action to be performed 
         // when the document is ready 
-        //document.getElementById("alertmessage").innerHTML = this.responseText;
-        alert(this.responseText);
-        show_msg("submit_sw");
+        show_msg("submit_sw", this.responseText );
         } 
     }; 
 
@@ -81,7 +79,7 @@ function add ( strfname, strlname, strcode){
     xmlhttp.send("last_name="+strlname+"&first_name="+strfname+"&user_id="+strcode); 
 }
 
-function remove(str){
+function remove( strfname, strlname, strcode){
     // Creates a new XMLHttpRequest object 
     var xmlhttp = new XMLHttpRequest(); 
             
@@ -94,12 +92,10 @@ function remove(str){
                       
         // Typical action to be performed 
         // when the document is ready 
-        //  document.getElementById("alertmessage").innerHTML = this.responseText;
         document.getElementById 
             ("first_name").value = ""; 
         document.getElementById
-            ("last_name").value = "";
-        alert(this.responseText);           
+            ("last_name").value = "";          
         show_msg("delete_sw");
         } 
     }; 
@@ -112,7 +108,7 @@ function remove(str){
 
               
     // Sends the request to the server 
-     xmlhttp.send("user_id="+str);     
+     xmlhttp.send("last_name="+strlname+"&first_name="+strfname+"&user_id="+strcode);     
 }
     
 function updating ( strfname, strlname, strcode){
@@ -128,9 +124,7 @@ function updating ( strfname, strlname, strcode){
                               
         // Typical action to be performed 
         // when the document is ready 
-        //   document.getElementById("alertmessage").innerHTML = this.responseText;
-        alert(this.responseText);
-        show_msg("update_sw");   
+        show_msg("update_sw", this.responseText);   
         } 
     };    
     // xhttp.open("POST", "filename", true); 
@@ -144,8 +138,22 @@ function updating ( strfname, strlname, strcode){
     xmlhttp.send("last_name="+strlname+"&first_name="+strfname+"&user_id="+strcode); 
 }
 
-function show_msg(str){
-    switch(str){
+function show_msg(str, strmsg ){
+    var str1;
+    var option_msg = "search_msg";
+
+    if( strmsg == "Added data" ){
+        str1 = str;
+    }else if ( strmsg == "Dupplicate data"){
+        str1 = "search_sw";
+    }else if ( strmsg == "Please fill the data"){
+        str1 = "search_sw";
+    } else if (  strmsg == "No record") {
+        str1 = "search_sw";
+    } else {
+        str1 = str;
+    }
+    switch(str1){
         case "update_sw":
             update_class.style.display = 'block';
             search_class.style.display = 'none';
@@ -176,4 +184,7 @@ function show_msg(str){
             delete_class.style.display = 'none';
             submit_class.style.display = 'none';
     }
+
+
+    document.getElementById(option_msg).innerHTML = '<strong>Warning! </strong> '+ strmsg;
 }
