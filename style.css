@@ -1,0 +1,56 @@
+
+body {
+    background-color: #ff7700;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc2645' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%239e5540' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23b7065f' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23be3e7b' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23bc176b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b26f5c' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23aa2975' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23941569' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23be3e8c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%2394127e' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23983ba2' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%238e4b84' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
+    
+
+.field{
+    width: 100%;
+    position: relative;
+    margin-bottom: 60px;
+    justify-content: center; 
+}
+
+
+.message{
+    width: 100%;
+    position: relative;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+}
+.message .submit_class{
+    font-size: 20px;
+    color: green;
+    position: absolute;
+    animation: buttons .3s linear;
+    display: none;
+}
+.message .update_class{
+    font-size: 20px;
+    color: blue;
+    position: absolute;
+    animation: buttons .3s linear;
+    display: none;
+}
+.message .delete_class{
+    font-size: 20px;
+    color: red;
+    position: absolute;
+    transition: .3s;
+    animation: buttons .3s linear;
+    display: none;
+}
+.message .search_class{
+    font-size: 20px;
+    color: yellow;
+    position: absolute;
+    transition: .3s;
+    animation: buttons .3s linear;
+    display: none;
+}
